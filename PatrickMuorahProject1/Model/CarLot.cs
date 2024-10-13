@@ -9,9 +9,9 @@ namespace PatrickMuorahProject1.Model
     /// <summary>
     /// Contains the Inventory of All the Cars 
     /// </summary>
-    internal class CarLot
+    public class CarLot
     {
-        private List<Car> Inventory;
+        public List<Car> Inventory;
 
         public const double TaxRate = 7.8;
 
@@ -251,20 +251,6 @@ namespace PatrickMuorahProject1.Model
             }
             return theWorstMpgCar;
         }
-
-        /// <summary>
-        /// Gets the count pf cars in inventory.
-        /// </summary>
-        /// <value>
-        /// The count.
-        /// </value>
-        public int Count => Inventory.Count;
-
-        /// <summary>
-        /// Returns the List of the store’s inventory.
-        /// </summary>
-        private List<Car> _inventory_ = new List<Car>();
-
 
 
 

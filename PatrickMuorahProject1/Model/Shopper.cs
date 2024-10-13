@@ -9,7 +9,7 @@ namespace PatrickMuorahProject1.Model
     /// <summary>
     /// Contains information about the shopper of a car
     /// </summary>
-    internal class Shopper
+    public class Shopper
     {
         /// <summary>
         /// Gets or sets the name.
@@ -33,7 +33,7 @@ namespace PatrickMuorahProject1.Model
         /// <value>
         /// The cars.
         /// </value>
-        private List<Car> Cars { get; set; }
+        private List<Car>? Cars { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Shopper"/> class.
@@ -45,6 +45,9 @@ namespace PatrickMuorahProject1.Model
         /// or
         /// The Money available cannot be negative.
         /// </exception>
+        /// 
+        
+        public Shopper() { }
         public Shopper(string name, decimal moneyAvailable)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -87,7 +90,10 @@ namespace PatrickMuorahProject1.Model
 
             if (!CanPurchase(car))
                 throw new InvalidOperationException("Not enough money to purchase the car.");
-
+            if (Cars == null)
+            {
+                throw new InvalidOperationException("Cars cannot be null.");
+            }
             Cars.Add(car);
             MoneyAvailable -= (car.Price + (car.Price * 0.078m));
         }

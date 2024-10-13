@@ -1,4 +1,6 @@
-﻿namespace PatrickMuorahProject1.VIew
+﻿using PatrickMuorahProject1.Model;
+
+namespace PatrickMuorahProject1.VIew
 {
     partial class ShopperForm
     {
@@ -28,137 +30,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            numericUpDown1 = new NumericUpDown();
-            numericUpDown2 = new NumericUpDown();
+            save_btn = new Button();
+            cancel_btn = new Button();
+            shoppername_txtbox = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            moneyavailable_numUpDown = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)moneyavailable_numUpDown).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // save_btn
             // 
-            textBox1.Location = new Point(242, 81);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(120, 23);
-            textBox1.TabIndex = 0;
+            save_btn.Location = new Point(127, 114);
+            save_btn.Name = "save_btn";
+            save_btn.Size = new Size(75, 23);
+            save_btn.TabIndex = 8;
+            save_btn.Text = "SAVE";
+            save_btn.UseVisualStyleBackColor = true;
+            save_btn.Click += save_btn_Click;
             // 
-            // textBox2
+            // cancel_btn
             // 
-            textBox2.Location = new Point(242, 138);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(120, 23);
-            textBox2.TabIndex = 1;
+            cancel_btn.Location = new Point(287, 114);
+            cancel_btn.Name = "cancel_btn";
+            cancel_btn.Size = new Size(75, 23);
+            cancel_btn.TabIndex = 9;
+            cancel_btn.Text = "CANCEL";
+            cancel_btn.UseVisualStyleBackColor = true;
+            cancel_btn.Click += cancel_btn_Click;
             // 
-            // numericUpDown1
+            // shoppername_txtbox
             // 
-            numericUpDown1.Location = new Point(242, 185);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 2;
-            // 
-            // numericUpDown2
-            // 
-            numericUpDown2.Location = new Point(242, 239);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(120, 23);
-            numericUpDown2.TabIndex = 3;
+            shoppername_txtbox.Location = new Point(242, 37);
+            shoppername_txtbox.Name = "shoppername_txtbox";
+            shoppername_txtbox.Size = new Size(120, 23);
+            shoppername_txtbox.TabIndex = 11;
+            shoppername_txtbox.TextAlign = HorizontalAlignment.Center;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(189, 84);
+            label1.Location = new Point(127, 69);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 4;
-            label1.Text = "label1";
+            label1.Size = new Size(109, 15);
+            label1.TabIndex = 12;
+            label1.Text = "MONEY AVAILABLE";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(189, 141);
+            label2.Location = new Point(127, 40);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 5;
-            label2.Text = "label2";
+            label2.Size = new Size(95, 15);
+            label2.TabIndex = 13;
+            label2.Text = "SHOPPER NAME";
             // 
-            // label3
+            // moneyavailable_numUpDown
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(189, 187);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 6;
-            label3.Text = "label3";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(189, 241);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 7;
-            label4.Text = "label4";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(152, 302);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 8;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(372, 302);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 9;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            moneyavailable_numUpDown.Location = new Point(242, 66);
+            moneyavailable_numUpDown.Maximum = new decimal(new int[] { 1000000000, 0, 0, 0 });
+            moneyavailable_numUpDown.Name = "moneyavailable_numUpDown";
+            moneyavailable_numUpDown.Size = new Size(120, 23);
+            moneyavailable_numUpDown.TabIndex = 14;
+            moneyavailable_numUpDown.TextAlign = HorizontalAlignment.Center;
+            moneyavailable_numUpDown.ThousandsSeparator = true;
             // 
             // ShopperForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(moneyavailable_numUpDown);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(numericUpDown2);
-            Controls.Add(numericUpDown1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(shoppername_txtbox);
+            Controls.Add(cancel_btn);
+            Controls.Add(save_btn);
             Name = "ShopperForm";
             Text = "ShopperForm";
             Load += ShopperForm_Load;
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)moneyavailable_numUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private NumericUpDown numericUpDown1;
-        private NumericUpDown numericUpDown2;
+        private Button save_btn;
+        private Button cancel_btn;
+        private TextBox shoppername_txtbox;
         private Label label1;
         private Label label2;
-        private Label label3;
-        private Label label4;
-        private Button button1;
-        private Button button2;
+        private NumericUpDown moneyavailable_numUpDown;
     }
 }
