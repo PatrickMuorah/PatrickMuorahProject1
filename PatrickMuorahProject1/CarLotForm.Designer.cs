@@ -1,6 +1,6 @@
 ﻿namespace PatrickMuorahProject1
 {
-    partial class Form1
+    partial class CarLotForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            addCar_btn = new Button();
+            SuspendLayout();
+            // 
+            // addCar_btn
+            // 
+            addCar_btn.Location = new Point(68, 181);
+            addCar_btn.Name = "addCar_btn";
+            addCar_btn.Size = new Size(88, 35);
+            addCar_btn.TabIndex = 0;
+            addCar_btn.Text = "Add Car";
+            addCar_btn.UseVisualStyleBackColor = true;
+            addCar_btn.Click += addCar_btn_Click;
+            // 
+            // CarLotForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(addCar_btn);
+            Name = "CarLotForm";
+            Text = "CarLotForm";
+            Load += CarLotForm_Load;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button addCar_btn;
     }
 }
