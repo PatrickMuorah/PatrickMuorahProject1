@@ -14,9 +14,16 @@ namespace PatrickMuorahProject1.VIew
 {
     public partial class InventoryForm : Form
     {
+        /// <summary>
+        /// The car lot object
+        /// </summary>
         private CarLot carLot;
 
+        /// <summary>
+        /// The inventory of cars
+        /// </summary>
         private List<Car> inventory;
+
         public InventoryForm(List<Car> carList)
         {
             this.inventory = carList;
@@ -25,6 +32,9 @@ namespace PatrickMuorahProject1.VIew
             DisplayInventory();
         }
 
+        /// <summary>
+        /// Displays the cars in inventory.
+        /// </summary>
         private void DisplayInventory()
         {
             string inventoryReport = "Inventory of " + carLot.Inventory.Count + " cars:\n";
@@ -63,6 +73,11 @@ namespace PatrickMuorahProject1.VIew
             inventory_textBox.Text = inventoryReport;
         }
 
+        /// <summary>
+        /// Handles the Click event of the close_Btn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void close_Btn_Click(object sender, EventArgs e)
         {
             this.Close();
