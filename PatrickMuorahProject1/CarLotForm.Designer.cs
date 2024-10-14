@@ -34,6 +34,8 @@
             addShopper_btn = new Button();
             purchaseCar_btn = new Button();
             carListBox = new ListBox();
+            inventory_Btn = new Button();
+            close_Btn = new Button();
             SuspendLayout();
             // 
             // addCar_btn
@@ -93,11 +95,33 @@
             carListBox.Size = new Size(120, 94);
             carListBox.TabIndex = 5;
             // 
+            // inventory_Btn
+            // 
+            inventory_Btn.Location = new Point(301, 334);
+            inventory_Btn.Name = "inventory_Btn";
+            inventory_Btn.Size = new Size(94, 31);
+            inventory_Btn.TabIndex = 6;
+            inventory_Btn.Text = "View Inventory";
+            inventory_Btn.UseVisualStyleBackColor = true;
+            inventory_Btn.Click += inventory_Btn_Click;
+            // 
+            // close_Btn
+            // 
+            close_Btn.Location = new Point(301, 381);
+            close_Btn.Name = "close_Btn";
+            close_Btn.Size = new Size(94, 23);
+            close_Btn.TabIndex = 7;
+            close_Btn.Text = "Close";
+            close_Btn.UseVisualStyleBackColor = true;
+            close_Btn.Click += close_Btn_Click;
+            // 
             // CarLotForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(close_Btn);
+            Controls.Add(inventory_Btn);
             Controls.Add(carListBox);
             Controls.Add(purchaseCar_btn);
             Controls.Add(addShopper_btn);
@@ -119,5 +143,7 @@
         private Button addShopper_btn;
         private Button purchaseCar_btn;
         private ListBox carListBox;
+        private Button inventory_Btn;
+        private Button close_Btn;
     }
 }

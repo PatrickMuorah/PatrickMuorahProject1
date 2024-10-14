@@ -26,6 +26,7 @@ namespace PatrickMuorahProject1
         {
             InitializeComponent();
             carLot = new CarLot();
+            shopper = new Shopper();
             UpdateInventoryDisplay();
         }
 
@@ -183,5 +184,25 @@ namespace PatrickMuorahProject1
             moneyavailable_label.Text = $"${shopper.MoneyAvailable:0.00}";
         }
 
+        /// <summary>
+        /// Handles the Click event of the inventory_Btn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void inventory_Btn_Click(object sender, EventArgs e)
+        {
+            InventoryForm inventoryForm = new InventoryForm(carLot.Inventory);
+            inventoryForm.ShowDialog();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the close_Btn control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void close_Btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
